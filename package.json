@@ -1,0 +1,15 @@
+{
+    "name": "nmmes-module-checksum",
+    "version": "0.0.1",
+    "description": "Adds a checksum to the end of the output",
+    "main": "main.js",
+    "repository": "https://github.com/NMMES/nmmes-module-checksum",
+    "author": "Ayrton Sparling <ayrton@sparling.us>",
+    "license": "MIT",
+    "dependencies": {
+        "crc": "^3.5.0",
+        "fs-extra": "^5.0.0",
+        "nmmes-backend": "^0.0.3",
+        "sse4_crc32": "^5.2.0"
+    }
+}
