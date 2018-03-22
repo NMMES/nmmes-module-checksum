@@ -6,6 +6,10 @@
     "repository": "https://github.com/NMMES/nmmes-module-checksum",
     "author": "Ayrton Sparling <ayrton@sparling.us>",
     "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/NMMES/nmmes-module-checksum.git"
+    },
     "dependencies": {
         "crc": "^3.5.0",
         "fs-extra": "^5.0.0",
