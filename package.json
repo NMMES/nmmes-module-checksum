@@ -1,17 +1,16 @@
 {
     "name": "nmmes-module-checksum",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "description": "Adds a checksum to the end of the output",
     "main": "main.js",
-    "repository": "https://github.com/NMMES/nmmes-module-checksum",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/NMMES/nmmes-module-checksum.git"
+    },
     "author": "Ayrton Sparling <ayrton@sparling.us>",
     "license": "MIT",
     "scripts": {
         "postversion": "git push && npm publish"
-    },
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/NMMES/nmmes-module-checksum.git"
     },
     "dependencies": {
         "crc": "^3.5.0",
