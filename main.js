@@ -7,8 +7,9 @@ const fs = require('fs-extra');
 const crc = require('crc');
 
 module.exports = class Checksum extends nmmes.Module {
-    constructor(args) {
+    constructor(args, logger = Logger) {
         super(require('./package.json'));
+        this.logger = logger;
 
         this.options = Object.assign(nmmes.Module.defaults(Checksum), args);
     }
@@ -20,7 +21,7 @@ module.exports = class Checksum extends nmmes.Module {
         parsed.base = options.format;
         let output = Path.format(parsed);
         let stream = fs.createReadStream(this.video.output.path);
-        Logger.trace(`Calculating ${options.algo}...`);
+        this.logger.trace(`Calculating ${options.algo}...`);
         parsed.hash = await new Promise((resolve, reject) => {
 
             switch (options.algo) {
@@ -60,7 +61,7 @@ module.exports = class Checksum extends nmmes.Module {
                     return reject(new Error(`Invalid checksum algorithm`));
             }
         });
-        Logger.debug(`${options.algo} calculated to: ${parsed.hash}`);
+        this.logger.debug(`${options.algo} calculated to: ${parsed.hash}`);
         for (let [key, value] of Object.entries(parsed)) {
             output = output.replace(`{${key}}`, value);
         }
