@@ -1,6 +1,6 @@
 {
     "name": "nmmes-module-checksum",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "description": "Adds a checksum to the end of the output",
     "main": "main.js",
     "repository": {
