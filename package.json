@@ -15,7 +15,7 @@
     "dependencies": {
         "crc": "^3.5.0",
         "fs-extra": "^5.0.0",
-        "nmmes-backend": "^0.0.3",
+        "nmmes-backend": "0.0.10",
         "sse4_crc32": "^5.2.0"
     }
 }
