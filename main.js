@@ -1,15 +1,13 @@
 'use strict';
 
 const nmmes = require('nmmes-backend');
-const Logger = nmmes.Logger;
 const Path = require('path');
 const fs = require('fs-extra');
 const crc = require('crc');
 
 module.exports = class Checksum extends nmmes.Module {
-    constructor(args, logger = Logger) {
-        super(require('./package.json'));
-        this.logger = logger;
+    constructor(args, logger) {
+        super(require('./package.json'), logger);
 
         this.options = Object.assign(nmmes.Module.defaults(Checksum), args);
     }
