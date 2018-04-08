@@ -20,8 +20,8 @@ module.exports = class Checksum extends nmmes.Module {
         let output = Path.format(parsed);
         let stream = fs.createReadStream(this.video.output.path);
         this.logger.trace(`Calculating ${options.algo}...`);
+        parsed.hashfmt = options.algo;
         parsed.hash = await new Promise((resolve, reject) => {
-
             switch (options.algo) {
                 case 'crc32c':
                     {
@@ -78,7 +78,7 @@ module.exports = class Checksum extends nmmes.Module {
                 group: 'Advanced:'
             },
             'format': {
-                default: '{name}-[{hash}]{ext}',
+                default: '{name}-[{hashfmt}-{hash}]{ext}',
                 describe: 'The file name format for the output file.',
                 type: 'string',
                 group: 'Advanced:'
